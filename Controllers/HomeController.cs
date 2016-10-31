@@ -10,7 +10,7 @@ namespace AspnetcoreVue.Controllers
     {
         public IActionResult Index()
         {
-            return View(new object {});
+            return View();
         }
 
         public IActionResult Error()

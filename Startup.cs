@@ -48,7 +48,6 @@ namespace AspnetcoreVue
                 app.UseDeveloperExceptionPage();
                 app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
                 {
-                    ConfigFile = "webpack.client.config.js",
                     HotModuleReplacement = true
                 });
             }
@@ -59,6 +58,10 @@ namespace AspnetcoreVue
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+
+                routes.MapSpaFallbackRoute(
+                    name: "spa-fallback",
+                    defaults: new { controller = "Home", action = "Index" });
             });
         }
     }
