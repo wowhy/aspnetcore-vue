@@ -2,6 +2,7 @@
   <div class="app-tabbar">
     <div class="tabs">
       <ul class="is-left">
+        <li><a class="tab-backward"><i class="fa fa-backward"></i></a></li>
         <li v-for="tab in tabs" :class="{ 'is-active': tab.route === routeName }">
           <a @click="activeTab(tab)">{{tab.name}}</a>
         </li>
@@ -60,8 +61,25 @@
   @import '~bulma/sass/utilities/mixins';
   @import '../variables';
   .app-tabbar {
+    background-color: #fff;
+    
     @include mobile() {
       display: none;
+    }
+
+    .tab-backward {
+      border: none;
+      color: #e3e3e3;
+      &:hover {
+        color: #4a4a4a;
+      }
+
+      .fa {
+        font-size: 1rem;
+      }
+    }
+
+    .is-active {
     }
   }
 
