@@ -1,6 +1,7 @@
 var path = require('path')
 var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.config')
+var webpack = require('webpack')
 
 var clientWebpackConfig = merge(baseWebpackConfig, {
     entry: {
