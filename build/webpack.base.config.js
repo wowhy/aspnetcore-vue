@@ -9,7 +9,11 @@ var baseWebpackConfig = {
   resolve: {
     extensions: ['.js', '.vue'],
     alias: {
-      'vue$': 'vue/dist/vue'
+      'vue$': 'vue/dist/vue',
+      'components': path.resolve(__dirname, '../ClientApp/components'),
+      'views': path.resolve(__dirname, '../ClientApp/views'),
+      'utils': path.resolve(__dirname, '../ClientApp/utils'),
+      'api': path.resolve(__dirname, '../ClientApp/store/api')
     }
   },
   module: {

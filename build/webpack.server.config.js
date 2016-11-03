@@ -9,8 +9,10 @@ var serverWebpackConfig = merge(baseWebpackConfig, {
     server: path.resolve(__dirname, '../ClientApp/server.js')
   },
   output: {
-    path: path.resolve(__dirname, '../ClientApp/dist')
-  }
+    libraryTarget: 'commonjs2',
+    path: path.resolve(__dirname, '../wwwroot/dist')
+  },
+  externals: Object.keys(require('../package.json').dependencies)
 })
 
 module.exports = serverWebpackConfig

@@ -1,9 +1,8 @@
-process.env.VUE_ENV = 'server'
+import { app } from './app'
 
-module.exports = function(params) {
-  return new Promise(function(resolve, reject) {
-    resolve({
-      html: 'Your message: ' + params.data.message
-    })
-  })
-}
+// push context related data (in our case the initial state of the application) with the context attribute
+export default function(context) {
+    return new Promise((resolve, reject) => {
+        resolve(app);
+    });
+};
